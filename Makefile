@@ -9,7 +9,7 @@ OUTPUT_BINARY := $(PROGRAM).bin
 BINARIES_PATH := $(HOME)/packages/bin
 DEST_PATH := $(if $(INSTALL),$(BINARIES_PATH),$(HOME))
 
-CFLAGS := -lncurses
+CFLAGS := -lncurses -lSDL2 -lSDL2_mixer
 SRC_FILES := $(wildcard $(SOURCE_DIR)/*.c)
 
 .PHONY: all install clean run

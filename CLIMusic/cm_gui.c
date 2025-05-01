@@ -4,14 +4,14 @@
 #include "cm_colors.h"
 #include "cm_gui.h"
 
-cm_gui_vector2i cm_gui_make_vector2i(int y, int x) {
-  cm_gui_vector2i vec;
+struct cm_gui_vector2i cm_gui_make_vector2i(int y, int x) {
+  struct cm_gui_vector2i vec;
   vec.x = x;
   vec.y = y;
   return vec;
 }
 
-void cm_gui_draw_rect(cm_color_pair color, cm_gui_vector2i vec, int width, int height) {
+void cm_gui_draw_rect(cm_color_pair color, struct cm_gui_vector2i vec, int width, int height) {
   if (width < 2 || height < 2) return;
 
   // enable color
@@ -79,7 +79,7 @@ void cm_gui_draw_rect(cm_color_pair color, cm_gui_vector2i vec, int width, int h
   cm_colors_disable_color(color);
 }
 
-void cm_gui_draw_text(cm_color_pair color, cm_gui_vector2i vec, const char *fmt, ...) {
+void cm_gui_draw_text(cm_color_pair color, struct cm_gui_vector2i vec, const char *fmt, ...) {
   char buffer[1024];
 
   va_list args;
